@@ -1,4 +1,3 @@
-markdown
 # Product Registry API Tests
 
 Автоматизированные API тесты для сервиса «Реестр Продуктов» с использованием `requests` и `pytest`.
