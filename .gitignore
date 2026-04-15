@@ -1,2 +1,7 @@
-.env-copy
 .env
+.env.local
+.env.*.local
+*.log
+.idea/
+venv/
+__pycache__/
