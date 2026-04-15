@@ -9,7 +9,7 @@ from src.utils.helpers import generate_unique_name
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-@pytest.fixture
+@pytest.fixture(scope="session")
 def api_client():
     return ApiClient()
 
@@ -39,3 +39,16 @@ def product_type(api_client, section, unique_name):
     type_data = resp.json()
     yield ProductType(**type_data)
     api_client.delete(f"/api/producttypes/{type_data['id']}")
+
+@pytest.fixture(scope="session")
+def statuses(api_client):
+    return api_client.get('/api/statuses').json()
+
+@pytest.fixture(scope="session")
+def support_types(api_client):
+    return api_client.get('/api/supportType/all').json()
+
+@pytest.fixture(scope="session")
+def contacts(api_client):
+    return api_client.get("/api/users/contacts").json()
+

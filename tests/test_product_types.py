@@ -3,7 +3,7 @@
 def test_create_product_type(api_client, section, unique_name):
     payload = {
         "name": unique_name,
-        "localizedName": unique_name   # обязательно
+        "localizedName": unique_name
     }
     resp = api_client.post("/api/producttypes", params={"sectionId": section.id}, json=payload)
     assert resp.status_code == 200

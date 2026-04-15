@@ -9,7 +9,7 @@ def generate_unique_name(prefix: str = "test") -> str:
 def random_product_name() -> str:
     return f"Продукт {fake.word()} {fake.random_int(1, 999)}"
 
-def random_product_name() -> str:
+def random_product_code() -> str:
     return f"PRD-{fake.random_int(1000,9999)}"
 
 def random_description() -> str:

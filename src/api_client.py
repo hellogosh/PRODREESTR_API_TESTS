@@ -10,10 +10,6 @@ class ApiClient:
         self.token = os.getenv('TOKEN')
         self.session = requests.Session()
 
-        self.session.cookies.set("session-cookie",
-                                 "18a416a1427b92ec247a030a80267f931cedce47463e836fa0066c1ca41d07329d4c5f09a3e10e5be236cb5f2eebba56")
-        self.session.cookies.set("SESSION", "faec3440-125a-4b62-abb2-a481fab37652")
-
         self.session.headers.update({
             "Authorization": f"Bearer {self.token}",
             "Content-Type": "application/json"
